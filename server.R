@@ -20,7 +20,7 @@ server = function(input,output,session){
     Data$AgentGender<-as.numeric(Data$AgentGender)
     Data$MaritalStatus<-as.numeric(Data$MaritalStatus)
     
-    Pred<-predict(SVMb, Data)
+    Pred<-predict(SVM, Data)
    
     output$text<-renderText({
         if (Pred==1) {
