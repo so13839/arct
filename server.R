@@ -1,9 +1,8 @@
-# This is the server logic of a Shiny web application. You can run the application by clicking 'Run App' above.
+#This is the server logic of a Shiny web application. You can run the application by clicking 'Run App' above.
 library(shiny)
 library(e1071)
-SVM<-readRDS(file = "SVM")
+SVM<-load(file = "SVM")
 
-MaritalStatus,AgentAge,AgentGender,COPCertified,LastEmployer_Insurance,AcademicQualification
 # Define server logic
 server = function(input,output,session){
   observeEvent( input$Enter, {
@@ -14,7 +13,6 @@ server = function(input,output,session){
     AgentGender = input$AgentGender
     LastEmployer_Insurance = input$LastEmployer_Insurance
     Data = data.frame(MaritalStatus,AgentAge,AgentGender,COPCertified,LastEmployer_Insurance,AcademicQualification)
-    
     Data$COPCertified<-as.numeric(Data$COPCertified)
     Data$LastEmployer_Insurance<-as.numeric(Data$Employer_Insurance)
     Data$AgentGender<-as.numeric(Data$AgentGender)
