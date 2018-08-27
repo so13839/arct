@@ -7,7 +7,7 @@ library(shiny)
 shinyUI(fluidPage(
  # title
   
-  titlePanel("AGENT RECRUITMENT AND CLASSIFICATION TOOL/SERVICE"),
+  titlePanel("Agent Recruitment and Classification Tool/Service"),
   
   # Sidebar with input variables 
   sidebarLayout(
