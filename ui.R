@@ -5,8 +5,8 @@ library(shiny)
 
 # Define UI for application
 shinyUI(fluidPage(
+ # title
   
-  # title
   titlePanel("AGENT RECRUITMENT AND CLASSIFICATION TOOL/SERVICE"),
   
   # Sidebar with input variables 
@@ -20,10 +20,10 @@ shinyUI(fluidPage(
                    choices = list("Female"="2","Male"="1")),
       selectInput(inputId="COPCertified", label="COP Certified", 
                     choices = list("Yes"="1","No"="0")),
-      selectInput(inputId="LastEmployer_Insurance", label="Last employer:Insurance industry", 
-                    choices = list("Yes"="1","No"="0")),
+      selectInput(inputId="LastEmployer_Insurance", label="Is your last employer Insurance industry?", 
+                    choices = list("Yes"="1","No"="2")),
       selectInput(inputId="AcademicQualification", label="Academic Qualification", 
-                   choices = list("Primary"="1","Ordinary-level"="2","Advanced-level"="3","Certificate"="4","Diploma"="5","Degree"="6","Masters"="7","PhD"="8")),    
+                   choices = list("Primary"="1","Ordinary-level"="2","Advanced-level"="3","Certificate"="4","Diploma"="5","Degree"="6","Masters"="7","PhD"="8"))    
       ),
     
     # get prediction

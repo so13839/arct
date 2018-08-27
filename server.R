@@ -14,11 +14,11 @@ server = function(input,output,session){
     LastEmployer_Insurance = input$LastEmployer_Insurance
     Data = data.frame(MaritalStatus,AgentAge,AgentGender,COPCertified,LastEmployer_Insurance,AcademicQualification)
     Data$COPCertified<-as.numeric(Data$COPCertified)
-    Data$LastEmployer_Insurance<-as.numeric(Data$Employer_Insurance)
+   #Data$LastEmployer_Insurance<-as.numeric(Data$Employer_Insurance)
     Data$AgentGender<-as.numeric(Data$AgentGender)
     Data$MaritalStatus<-as.numeric(Data$MaritalStatus)
-    
-    Pred<-predict(SVM, Data)
+    Data<-as.numeric(Data)
+    Pred<-predict(SVM, get(Data))
    
     output$text<-renderText({
         if (Pred==1) {
